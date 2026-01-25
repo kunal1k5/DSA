@@ -1,25 +1,20 @@
 class Solution {
     public int[] rearrangeArray(int[] nums) {
-        return Rearrange(nums);
-    }
+        int n = nums.length;
+        int[] arr = new int[n];
+        int pi = 0;
+        int ni = 1;
 
-    public static int[] Rearrange(int arr[]){
-
-        int n = arr.length;
-        int ans[] = new int[n];
-        int posIndex = 0;
-        int negIndex = 1;
-
-        for(int i=0; i<arr.length; i++){
-            if(arr[i] < 0){
-                ans[negIndex] = arr[i];
-                negIndex += 2;
+        for(int i =0; i< n; i++){
+            if(nums[i] < 0){
+                arr[ni] = nums[i];
+                ni +=2;
             }
             else{
-                ans[posIndex] = arr[i];
-                posIndex += 2;
+                arr[pi] = nums[i];
+                pi += 2;
             }
         }
-        return ans;
+        return arr;
     }
 }
